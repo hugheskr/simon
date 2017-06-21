@@ -1,0 +1,11 @@
+{
+  "name": "simon",
+  "version": "1.0.0",
+  "description": "Simon says game",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp"
+  },
+  "author": "KrisHughes <kristopher_hughes@yahoo.com>",
+  "license": "MIT"
+}
