@@ -2,16 +2,29 @@
 <html lang="en">
 <head>
   <link rel="stylesheet" href="application.css">
+  <script src="bundle.js"></script>
   <meta charset="UTF-8">
   <title>Simon</title>
 </head>
-<body>
+<body ng-app = "simonApp">
   <header>
     <h1>Simon</h1>
   </header>
-  <div>
-
+  <div ng-controller = "padController">
+    <button ng-click = "startGame()">Start!</button>
+    <button>reset</button>
+    <div>Count:</div>
+    <section class="gamePad" ng-controller = "padController">
+      <div>
+        <!-- <div class="button" id="green" ng-class= "isLit.green ? 'litGreen' : 'green'"> </div> -->
+        <div class="button plainGreen" id="green" ng-style= "green"> </div>
+        <div class="button plainRed" id="red" ng-style= "red"> </div>
+      </div>
+      <div>
+        <div class="button plainYellow" id="yellow" ng-style= "yellow"> </div>
+        <div class="button plainBlue" id="blue" ng-style= "blue"> </div>
+      </div>
+    </section>
   </div>
-  <script></script>
 </body>
 </html>

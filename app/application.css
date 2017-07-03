@@ -1,0 +1,45 @@
+.button {
+  width: 200px;
+  height: 200px;	
+  display: inline-block;
+}
+
+.plainGreen {
+  background-color: green;
+  border-radius: 10px 0 0 0;
+}
+
+.plainRed {
+  background-color: red;
+  border-radius: 0 10px 0 0;
+}
+
+.plainYellow {
+  background-color: yellow;
+  border-radius: 0 0 0 10px;
+}
+
+.plainBlue {
+  background-color: blue;
+  border-radius: 0 0 10px 0;
+}
+
+/*.litGreen {
+  background-color: grey;
+  border-radius: 10px 0 0 0;
+}
+
+.litRed {
+  background-color: darkred;
+  border-radius: 0 10px 0 0;
+}
+
+.litYellow {
+  background-color: gold;
+  border-radius: 0 0 0 10px;
+}
+
+.litBlue {
+  background-color: darkblue;
+  border-radius: 0 0 10px 0;
+}*/
