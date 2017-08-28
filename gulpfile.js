@@ -1,11 +1,22 @@
 const gulp = require('gulp'),
       webpack = require('webpack'),
-      webpackStream = require('webpack-stream');
+      webpackStream = require('webpack-stream'),
+      sass = require('gulp-sass');
 
-gulp.task('css:dev', function() {
-  gulp.src(__dirname + '/app/*.css')
+gulp.task('sass:dev', function() {
+  gulp.src(__dirname + '/app/sass/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest(__dirname + '/build'));
 });
+
+// gulp.task('sass:dev', function() {
+//   gulp.src('./app/sass/**/*.scss')
+//     .pipe(maps.init())
+//     .pipe(sass().on('error', sass.logError))
+//     .pipe(minifyCss())
+//     .pipe(maps.write('./'))
+//     .pipe(gulp.dest('./build'));
+// });
 
 gulp.task('html:dev', function() {
   gulp.src(__dirname + '/app/*.html')
@@ -22,4 +33,4 @@ gulp.task('webpack:dev', function() {
     .pipe(gulp.dest('build/'));
 });
 
-gulp.task('default', ['html:dev','webpack:dev','css:dev']);
+gulp.task('default', ['html:dev','webpack:dev','sass:dev']);

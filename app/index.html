@@ -1,30 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   <link rel="stylesheet" href="application.css">
   <script src="bundle.js"></script>
   <meta charset="UTF-8">
-  <title>Simon</title>
+  <title>SIMON</title>
 </head>
 <body ng-app = "simonApp">
-  <header>
-    <h1>Simon</h1>
+  <header class="row">
+    <div class="three columns"></div>
+    <h1 class="six columns text">SIMON</h1>
   </header>
   <div ng-controller = "padController">
-    <button ng-click = "startGame()">Start!</button>
-    <button>reset</button>
-    <div>Count:</div>
-    <section class="gamePad" ng-controller = "padController">
-      <div>
-        <!-- <div class="button" id="green" ng-class= "isLit.green ? 'litGreen' : 'green'"> </div> -->
-        <div class="button plainGreen" id="green" ng-style= "green"> </div>
-        <div class="button plainRed" id="red" ng-style= "red"> </div>
+
+    <div class="row">
+      <div class="three columns"></div>
+      <div class="six columns">
+          <label class="switch text">
+            <input type="checkbox" ng-model="disableGame" ng-change="gameSwitch(disableGame)">
+            <span class="slider"></span>
+          </label>
       </div>
+    </div>  
+
+    <div class="row">
+      <div class="three columns"></div>
+      <button ng-click="startGame()" ng-disabled="!disableGame" ng-class="disableGame ? 'button-primary' : 'button' "class="six columns text">Start</button> 
+    </div>
+
+    <div class="row">
+      <div class="three columns"></div>
+      <button class="strict six columns text" ng-class="strictActive ? 'button-primary' : 'button' " ng-click="switchStrict(); strictActive = !strictActive" ng-disabled="!disableGame">Strict
+      </button>
+    </div>
+
+    <div class="row">
+      <div class="three columns"></div>
+      <div class="six columns text">COUNT: {{ round }}</div>
+    </div>
+
+    <div class="row">
+      <div class="three columns"></div>
+      <div class="six columns text">MESSAGE: {{ message }}</div>
+    </div>
+
+    
+    <section class="game-pad" ng-controller = "padController">
       <div>
-        <div class="button plainYellow" id="yellow" ng-style= "yellow"> </div>
-        <div class="button plainBlue" id="blue" ng-style= "blue"> </div>
+      <div class="center">
+        <button class="gameButton plainGreen" id="green" ng-style= "green" ng-click="pushed($event)" ng-disabled="disable"> </button>
+        <button class="gameButton plainRed left" id="red" ng-style= "red" ng-click="pushed($event)" ng-disabled="disable"> </button>
+      </div>
+      </div>
+
+      <div>
+      <div class="center">
+        <button class="gameButton plainYellow" id="yellow" ng-style= "yellow" ng-click="pushed($event)" ng-disabled="disable"> </button>
+        <button class="gameButton plainBlue left" id="blue" ng-style= "blue" ng-click="pushed($event)" ng-disabled="disable"> </button>
+      </div>
       </div>
     </section>
+
   </div>
 </body>
 </html>

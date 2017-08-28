@@ -4,7 +4,9 @@
   "description": "Simon says game",
   "main": "index.js",
   "scripts": {
-    "test": "gulp"
+    "start": "node index.js",
+    "test": "gulp",
+    "postinstall": "gulp"
   },
   "repository": {
     "type": "git",
@@ -21,6 +23,7 @@
     "webpack-stream": "3.2.0"
   },
   "devDependencies": {
-    "angular": "1.6.4"
+    "angular": "1.6.4",
+    "gulp-sass": "3.1.0"
   }
 }

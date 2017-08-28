@@ -1,0 +1,137 @@
+h1 {
+  text-align: center;
+}
+
+button:focus { 
+  outline:0 !important; 
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.gameButton {
+  width: 50%;
+  padding-bottom: 50%;  
+  float: left;
+  margin-bottom: 0px;
+}
+
+.plainGreen {
+  background-color: #34A853;
+  border-radius: 100% 0 0 0;
+}
+
+.plainRed {
+  background-color: #EA4335;
+  border-radius: 0 100% 0 0;
+}
+
+.plainYellow {
+  background-color: #FBBC05;
+  border-radius: 0 0 0 100%;
+}
+
+.plainBlue {
+  background-color: #4285F4;
+  border-radius: 0 0 100% 0;
+}
+
+.switch {
+  position: relative;
+  margin-right: 0px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 4px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "OFF";
+  height: 24px;
+  width: 50%;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  text-align: center;
+  border-radius: 4px;
+}
+
+input:checked + .slider {
+  background-color: #4285F4;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #4285F4;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(97%);
+  -ms-transform: translateX(97%);
+  transform: translateX(97%);
+  content: "ON";
+  text-align: center;
+}
+
+.game-switch {
+  text-align: center;
+}
+
+.center {
+    /* center the element */
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    /* give it dimensions */
+    width: 95%;
+}
+
+@media (min-width: 550px) {
+  .center {
+    width: 75%;
+  }
+}
+
+@media (min-width: 600px) {
+  .center {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .center {
+    width: 40%;
+  }
+}
+
+@media (min-width: 1500px) {
+  .center {
+    width: 30%;
+  }
+}
+
+.text {
+  font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+  padding-top: 20px;
+}
