@@ -18,6 +18,7 @@ app.controller('padController', function($scope, $rootScope, $timeout, $interval
   $rootScope.round;
   $rootScope.speed;
   $rootScope.message = ' ';
+  $rootScope.startCount = 0;
   $rootScope.isLit = {
   	green: { colorName: 'green', selectedColor: '#097626', nonSelectedColor: '#34A853', sound: 'https://s3.amazonaws.com/freecodecamp/simonSound1.mp3' },
   	red: { colorName: 'red', selectedColor: '#9F0E03', nonSelectedColor: '#EA4335', sound: 'https://s3.amazonaws.com/freecodecamp/simonSound2.mp3' },
@@ -39,7 +40,7 @@ app.controller('padController', function($scope, $rootScope, $timeout, $interval
   	  $interval.cancel($rootScope.playerPromise);
   	  $interval.cancel($rootScope.simonPromise);
   	  $timeout.cancel($rootScope.yourTurnPromise);
-  	  //$timeout.cancel($rootScope.flipPromise);
+  	  $timeout.cancel($rootScope.flipPromise);
   	  $timeout.cancel($rootScope.startGamePromise);
   	  $timeout.cancel($rootScope.flashSequencePromise);
   	  $rootScope.simonSequence.length = 0;
@@ -48,16 +49,21 @@ app.controller('padController', function($scope, $rootScope, $timeout, $interval
       $rootScope.pushCount = 0;
   	  $rootScope.message = '';
   	  $rootScope.round = '';
+      $rootScope.startCount = 0;
   	}
   }
 
   $scope.startGame = function() {
+    if ($rootScope.startCount === 0) {
     console.log('start');
+    $rootScope.startCount ++;
     $rootScope.simonSequence.length = 0;
     $rootScope.attemptSequence.length = 0;
     $rootScope.round = 0;
     $rootScope.pushCount = 0;
     simonTurn();
+
+    }
   }
 
   $scope.switchStrict = function() {
