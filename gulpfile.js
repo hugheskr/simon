@@ -23,6 +23,11 @@ gulp.task('html:dev', function() {
     .pipe(gulp.dest(__dirname + '/build'));
 });
 
+gulp.task('mp3:dev', function() {
+  gulp.src(__dirname + '/app/*.mp3')
+    .pipe(gulp.dest(__dirname + '/build'));
+});
+
 gulp.task('webpack:dev', function() {
   gulp.src(__dirname + '/app/*.js')
     .pipe(webpackStream({
@@ -33,4 +38,4 @@ gulp.task('webpack:dev', function() {
     .pipe(gulp.dest('build/'));
 });
 
-gulp.task('default', ['html:dev','webpack:dev','sass:dev']);
+gulp.task('default', ['html:dev','webpack:dev','sass:dev','mp3:dev']);

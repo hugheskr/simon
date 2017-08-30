@@ -20,10 +20,14 @@ app.controller('padController', function($scope, $rootScope, $timeout, $interval
   $rootScope.message = ' ';
   $rootScope.startCount = 0;
   $rootScope.isLit = {
-  	green: { colorName: 'green', selectedColor: '#097626', nonSelectedColor: '#34A853', sound: 'https://s3.amazonaws.com/freecodecamp/simonSound1.mp3' },
-  	red: { colorName: 'red', selectedColor: '#9F0E03', nonSelectedColor: '#EA4335', sound: 'https://s3.amazonaws.com/freecodecamp/simonSound2.mp3' },
-  	yellow: { colorName: 'yellow', selectedColor: '#9A7200', nonSelectedColor: '#FBBC05', sound: 'https://s3.amazonaws.com/freecodecamp/simonSound3.mp3' },
-  	blue: { colorName: 'blue', selectedColor: '#0759E4', nonSelectedColor: '#4285F4', sound: 'https://s3.amazonaws.com/freecodecamp/simonSound4.mp3' }
+        green: { colorName: 'green', selectedColor: '#097626', nonSelectedColor: '#34A853', sound: 'simonSound1.mp3' },
+    red: { colorName: 'red', selectedColor: '#9F0E03', nonSelectedColor: '#EA4335', sound: 'simonSound2.mp3' },
+    yellow: { colorName: 'yellow', selectedColor: '#9A7200', nonSelectedColor: '#FBBC05', sound: '/simonSound3.mp3' },
+    blue: { colorName: 'blue', selectedColor: '#0759E4', nonSelectedColor: '#4285F4', sound: '/simonSound4.mp3' }
+  	// green: { colorName: 'green', selectedColor: '#097626', nonSelectedColor: '#34A853', sound: 'https://s3.amazonaws.com/freecodecamp/simonSound1.mp3' },
+  	// red: { colorName: 'red', selectedColor: '#9F0E03', nonSelectedColor: '#EA4335', sound: 'https://s3.amazonaws.com/freecodecamp/simonSound2.mp3' },
+  	// yellow: { colorName: 'yellow', selectedColor: '#9A7200', nonSelectedColor: '#FBBC05', sound: 'https://s3.amazonaws.com/freecodecamp/simonSound3.mp3' },
+  	// blue: { colorName: 'blue', selectedColor: '#0759E4', nonSelectedColor: '#4285F4', sound: 'https://s3.amazonaws.com/freecodecamp/simonSound4.mp3' }
   };
 
 //Watch these for changes
