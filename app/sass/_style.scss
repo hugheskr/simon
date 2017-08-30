@@ -104,9 +104,15 @@ input:checked + .slider:before {
     width: 95%;
 }
 
+@media (min-width: 250px) {
+  .center {
+    width: 85%;
+  }
+}
+
 @media (min-width: 400px) {
   .center {
-    width: 90%;
+    width: 75%;
   }
 }
 
