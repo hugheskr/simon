@@ -15,8 +15,8 @@
   <div ng-controller = "padController">
 
     <div class="row">
-      <div class="three columns"></div>
-      <div class="six columns">
+      <div class="two columns"></div>
+      <div class="eight columns">
           <label class="switch text">
             <input type="checkbox" ng-model="disableGame" ng-change="gameSwitch(disableGame)">
             <span class="slider"></span>
@@ -25,24 +25,24 @@
     </div>  
 
     <div class="row">
-      <div class="three columns"></div>
-      <button ng-hide="startCount==1" ng-click="startGame()" ng-disabled="!disableGame" ng-class="disableGame ? 'button-primary' : 'button' "class="six columns text">Start</button> 
+      <div class="two columns"></div>
+      <button ng-hide="hideStart==true" ng-click="clickedStartGame()" ng-disabled="!disableGame" ng-class="disableGame ? 'button-primary' : 'button' "class="eight columns text">Start</button> 
     </div>
 
     <div class="row">
-      <div class="three columns"></div>
-      <button class="strict six columns text" ng-class="strictActive ? 'button-primary' : 'button' " ng-click="switchStrict(); strictActive = !strictActive" ng-disabled="!disableGame">Strict
+      <div class="two columns"></div>
+      <button class="strict eight columns text" ng-class="strictActive ? 'button-primary' : 'button' " ng-click="switchStrict(); strictActive = !strictActive" ng-disabled="!disableGame">Strict
       </button>
     </div>
 
     <div class="row">
-      <div class="three columns"></div>
-      <div class="six columns text">COUNT: {{ round }}</div>
+      <div class="two columns"></div>
+      <div class="eight columns text">COUNT: {{ round }}</div>
     </div>
 
     <div class="row">
-      <div class="three columns"></div>
-      <div class="six columns text">MESSAGE: {{ message }}</div>
+      <div class="two columns"></div>
+      <div class="eight columns text">MESSAGE: {{ message }}</div>
     </div>
 
     

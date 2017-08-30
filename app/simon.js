@@ -18,7 +18,7 @@ app.controller('padController', function($scope, $rootScope, $timeout, $interval
   $rootScope.round;
   $rootScope.speed;
   $rootScope.message = ' ';
-  $rootScope.startCount = 0;
+  $rootScope.hideStart = false;
   $rootScope.isLit = {
         green: { colorName: 'green', selectedColor: '#097626', nonSelectedColor: '#34A853', sound: 'simonSound1.mp3' },
     red: { colorName: 'red', selectedColor: '#9F0E03', nonSelectedColor: '#EA4335', sound: 'simonSound2.mp3' },
@@ -35,6 +35,9 @@ app.controller('padController', function($scope, $rootScope, $timeout, $interval
     }, true);
 
   $scope.$watch('message', function(newVal, oldVal) {
+    }, true);
+
+  $scope.$watch('disable', function(newVal, oldVal) {
     }, true);
 
 //Define Functions
@@ -54,20 +57,23 @@ app.controller('padController', function($scope, $rootScope, $timeout, $interval
   	  $rootScope.message = '';
   	  $rootScope.round = '';
       $rootScope.startCount = 0;
+      $rootScope.hideStart = false;
   	}
   }
 
+  $scope.clickedStartGame = function() {
+    $rootScope.hideStart = true;
+    $scope.startGame();
+  }
+
   $scope.startGame = function() {
-    if ($rootScope.startCount === 0) {
+
     console.log('start');
-    $rootScope.startCount ++;
     $rootScope.simonSequence.length = 0;
     $rootScope.attemptSequence.length = 0;
     $rootScope.round = 0;
     $rootScope.pushCount = 0;
     simonTurn();
-
-    }
   }
 
   $scope.switchStrict = function() {
@@ -136,6 +142,7 @@ app.controller('padController', function($scope, $rootScope, $timeout, $interval
   	    if (countDown !== 0) {
   	      $rootScope.message = countDown;
   	    } else if( $rootScope.isStrict === true) {
+          $rootScope.message = 'WAIT...';
   	      youLoseStrict();
   	    } else {
   	      flashSequence();
@@ -182,6 +189,6 @@ app.controller('padController', function($scope, $rootScope, $timeout, $interval
   }
 
   function youLoseStrict() {
-  	$rootScope.startGamePromise = $timeout($scope.startGame, 2000);
+  	$rootScope.startGamePromise = $timeout($scope.startGame, 1000);
   }
 });
