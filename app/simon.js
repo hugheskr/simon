@@ -8,7 +8,6 @@ app.controller('padController', function($scope, $rootScope, $timeout, $interval
   var intervalLength = 3000;
   var nextSound;
   var check;
-
   $rootScope.isStrict = false;
   $rootScope.simonSequence = [];
   $rootScope.attemptSequence = [];
@@ -31,18 +30,14 @@ app.controller('padController', function($scope, $rootScope, $timeout, $interval
   	// blue: { colorName: 'blue', selectedColor: '#0759E4', nonSelectedColor: '#4285F4', sound: 'https://s3.amazonaws.com/freecodecamp/simonSound4.mp3' }
   };
 
-  window.onload = window.mobilecheck;
-
-  window.mobilecheck = function() {
+  $scope.mobileCheck = function() {
     if (typeof window.orientation !== 'undefined') {
       check = true;
     } else {
       check = false;
+      console.log('non mobile');
     }
   };
-
-
-
 
 //Watch these for changes
   $scope.$watch('isLit', function(newVal, oldVal) {

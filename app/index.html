@@ -14,7 +14,7 @@
   </header>
   <div ng-controller = "padController">
 
-    <div class="row">
+    <div class="row" ng-init="mobileCheck()">
       <div class="two columns"></div>
       <div class="eight columns">
           <label class="switch text">
@@ -46,7 +46,7 @@
     </div>
 
     
-    <section class="game-pad" ng-controller = "padController">
+    <section class="game-pad">
       <div>
       <div class="center">
         <button class="gameButton plainGreen" id="green" ng-style= "green" ng-click="pushed($event)" ng-disabled="disable"> </button>
