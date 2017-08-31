@@ -15,6 +15,7 @@ button:hover {
   padding-bottom: 50%;  
   float: left;
   margin-bottom: 0px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .plainGreen {
@@ -146,8 +147,4 @@ input:checked + .slider:before {
 
 h1 {
   padding-top: 20px;
-}
-
-[contenteditable]:focus {
-  outline: 0px solid transparent;
 }
